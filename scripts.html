@@ -6,55 +6,63 @@
 <title>SSGP — August 2026 Filming Scripts</title>
 <style>
   :root{
-    --teal:#18c8e0; --teal-dk:#0ea8c0; --teal-lt:#e6f9fd;
-    --ink:#14232a; --mid:#4a5a62; --muted:#8a969c; --line:rgba(0,0,0,.08); --bg:#f4fafb; --white:#fff;
-    --spot:#18c8e0; --edu:#22c97a; --trust:#3b82f6; --phil:#8b5cf6; --local:#f5960a; --fun:#ff6b8a; --cta:#ef4444;
-    --sh:0 6px 22px rgba(20,60,70,.08);
+    --paper:#f7f3ec; --card:#fffdf9; --ink:#2b2620; --mid:#6c6459; --muted:#a29a8e;
+    --line:rgba(60,48,34,.12); --line-2:rgba(60,48,34,.07);
+    --brand:#a4643a; --brand-dk:#87502e; --brand-lt:#f0e5d8;
+    --spot:#b57a3c; --edu:#6f8f6a; --trust:#5a7690; --phil:#8a6d8c;
+    --local:#bd7a52; --fun:#b56f78; --cta:#a4533f;
+    --sh:0 10px 30px rgba(43,38,32,.07); --sh-sm:0 2px 10px rgba(43,38,32,.05);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);line-height:1.55;padding:28px 18px 70px}
+  body{background:var(--paper);color:var(--ink);line-height:1.55;padding:0 18px 70px}
+
+  .topnav{max-width:860px;margin:0 auto;display:flex;gap:8px;justify-content:center;padding:18px 0 4px}
+  .topnav a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:14px;font-weight:700;
+    color:var(--mid);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 18px;transition:.15s}
+  .topnav a:hover{color:var(--ink);border-color:var(--brand)}
+  .topnav a.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+
   .wrap{max-width:860px;margin:0 auto}
-  .eyebrow{display:inline-flex;gap:7px;background:var(--teal-lt);color:var(--teal-dk);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:12px}
-  h1{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;line-height:1.05}
-  h1 span{color:var(--teal-dk)}
-  .sub{color:var(--mid);font-size:15px;margin-top:8px}
-  .how{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:20px 0;box-shadow:var(--sh)}
-  .how h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-dk);margin-bottom:10px}
+  .eyebrow{display:inline-flex;gap:7px;background:var(--brand-lt);color:var(--brand-dk);font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin:26px 0 14px}
+  h1{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;line-height:1.04;font-weight:800}
+  h1 span{color:var(--brand)}
+  .sub{color:var(--mid);font-size:15px;margin-top:9px}
+  .how{background:var(--card);border:1px solid var(--line-2);border-radius:14px;padding:18px 20px;margin:22px 0;box-shadow:var(--sh)}
+  .how h3{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brand-dk);margin-bottom:11px}
   .how ol{margin:0;padding-left:20px;font-size:14px;color:var(--mid)}
-  .how li{margin-bottom:5px}
+  .how li{margin-bottom:6px}
   .how b{color:var(--ink)}
-  .weekhead{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
-  details{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.04);overflow:hidden;border-left:4px solid var(--teal)}
+  .weekhead{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:28px 0 11px;padding-bottom:7px;border-bottom:1.5px solid var(--line)}
+  details{background:var(--card);border:1px solid var(--line-2);border-radius:14px;margin-bottom:10px;box-shadow:var(--sh-sm);overflow:hidden;border-left:3px solid var(--line)}
   details.spot{border-left-color:var(--spot)} details.edu{border-left-color:var(--edu)} details.trust{border-left-color:var(--trust)}
   details.phil{border-left-color:var(--phil)} details.local{border-left-color:var(--local)} details.fun{border-left-color:var(--fun)} details.cta{border-left-color:var(--cta)}
   summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px;user-select:none}
   summary::-webkit-details-marker{display:none}
-  summary:hover{background:#fafdfe}
+  summary:hover{background:#fbf7f0}
   .day{font-size:15px;font-weight:800;min-width:64px}
-  .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:6px;color:#fff}
+  .tag{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;color:#fff}
   .spot .tag{background:var(--spot)} .edu .tag{background:var(--edu)} .trust .tag{background:var(--trust)} .phil .tag{background:var(--phil)} .local .tag{background:var(--local)} .fun .tag{background:var(--fun)} .cta .tag{background:var(--cta)}
   .sumhook{font-size:14px;font-weight:600;color:var(--ink);flex:1}
   .chev{color:var(--muted);font-size:13px;transition:transform .2s}
   details[open] .chev{transform:rotate(90deg)}
-  .body{padding:2px 16px 18px 16px;border-top:1px solid var(--line)}
+  .body{padding:2px 16px 18px 16px;border-top:1px solid var(--line-2)}
   .row{margin-top:13px}
-  .lbl{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-dk);margin-bottom:3px}
+  .lbl{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--brand-dk);margin-bottom:3px}
   .val{font-size:14.5px;color:var(--ink);line-height:1.5}
-  .val.say{background:var(--teal-lt);border-radius:8px;padding:9px 12px;font-style:italic}
-  .fname{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--teal-dk);background:var(--teal-lt);padding:3px 8px;border-radius:6px}
-  .note{font-size:13px;color:var(--muted);margin-top:24px;text-align:center;line-height:1.6}
-  .topnav{display:flex;gap:8px;justify-content:center;margin:0 0 22px;flex-wrap:wrap}
-  .topnav a{text-decoration:none;font-size:14px;font-weight:700;color:var(--mid);background:var(--white);border:1px solid var(--line);padding:8px 18px;border-radius:999px}
-  .topnav a.active{background:var(--teal-dk);color:#fff;border-color:var(--teal-dk)}
+  .val.say{background:var(--brand-lt);border-radius:8px;padding:9px 12px;font-style:italic}
+  .fname{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--brand-dk);background:var(--brand-lt);padding:3px 8px;border-radius:6px}
+  .note{font-size:13px;color:var(--muted);margin-top:26px;text-align:center;line-height:1.6}
 </style>
 </head>
 <body>
+<nav class="topnav">
+  <a href="index.html">Calendar</a>
+  <a href="scripts.html" class="active">Filming Scripts</a>
+</nav>
 <div class="wrap">
-<div class="topnav"><a href="index.html">📅 Calendar</a> <a href="scripts.html" class="active">🎬 Scripts</a></div>
-
-  <div class="eyebrow">🐾 Filming Scripts · August 2026</div>
-  <h1>What to <span>film & say</span>, every day</h1>
+  <div class="eyebrow">Filming Scripts · August 2026</div>
+  <h1>What to <span>film &amp; say</span>, every day</h1>
   <p class="sub">Sugar Sweet Georgia Puppies. Tap any day to open its full script. One post per weekday.</p>
 
   <div class="how">
@@ -216,11 +224,11 @@
     <div class="row"><div class="lbl">Filename</div><span class="fname">low-shedding-roundup</span></div>
   </div></details>
 
-  <details class="spot"><summary><span class="day">Aug 26</span><span class="tag">⭐ Dog Day</span><span class="sumhook">Happy National Dog Day!</span><span class="chev">▶</span></summary><div class="body">
+  <details class="spot"><summary><span class="day">Aug 26</span><span class="tag">Dog Day</span><span class="sumhook">Happy National Dog Day!</span><span class="chev">▶</span></summary><div class="body">
     <div class="row"><div class="lbl">Hook</div><div class="val">"Happy National Dog Day from the whole crew!" <em>(the month's biggest post)</em></div></div>
     <div class="row"><div class="lbl">Film</div><div class="val">Multi-breed celebration — as many puppies as you can show, upbeat energy, quick cuts. End on Phil + the crew.</div></div>
     <div class="row"><div class="lbl">Phil says</div><div class="val say">"Happy National Dog Day from all of us at Sugar Sweet Georgia Puppies! Come celebrate — meet the whole crew right here in Lawrenceville today."</div></div>
-    <div class="row"><div class="lbl">On-screen text</div><div class="val">🐾 Happy National Dog Day</div></div>
+    <div class="row"><div class="lbl">On-screen text</div><div class="val">Happy National Dog Day</div></div>
     <div class="row"><div class="lbl">Filename</div><span class="fname">national-dog-day-crew</span></div>
   </div></details>
 
