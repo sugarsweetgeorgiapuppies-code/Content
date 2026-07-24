@@ -6,97 +6,110 @@
 <title>SSGP — August 2026 Content Calendar</title>
 <style>
   :root{
-    --teal:#18c8e0; --teal-dk:#0ea8c0; --teal-lt:#e6f9fd;
-    --ink:#14232a; --mid:#4a5a62; --muted:#8a969c;
-    --line:rgba(0,0,0,.08); --bg:#f4fafb; --white:#fff;
-    --spot:#18c8e0; --edu:#22c97a; --trust:#3b82f6; --phil:#8b5cf6;
-    --local:#f5960a; --fun:#ff6b8a; --cta:#ef4444;
-    --sh:0 6px 22px rgba(20,60,70,.08); --sh-sm:0 2px 8px rgba(0,0,0,.05);
+    --paper:#f7f3ec; --card:#fffdf9; --ink:#2b2620; --mid:#6c6459; --muted:#a29a8e;
+    --line:rgba(60,48,34,.12); --line-2:rgba(60,48,34,.07);
+    --brand:#a4643a; --brand-dk:#87502e; --brand-lt:#f0e5d8;
+    --band:#2f2a24; --band-2:#3d372f;
+    /* muted, earthy pillar family — same tonal weight, no neon */
+    --spot:#b57a3c; --edu:#6f8f6a; --trust:#5a7690; --phil:#8a6d8c;
+    --local:#bd7a52; --fun:#b56f78; --cta:#a4533f;
+    --sh:0 10px 30px rgba(43,38,32,.07); --sh-sm:0 2px 10px rgba(43,38,32,.05);
     --r:16px;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);line-height:1.5;padding:28px 20px 60px}
-  .wrap{max-width:1240px;margin:0 auto}
-  header{margin-bottom:22px}
-  .eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--teal-lt);color:var(--teal-dk);
-    font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:12px}
-  h1{font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;line-height:1.05}
-  h1 span{color:var(--teal-dk)}
-  .sub{color:var(--mid);font-size:15px;margin-top:8px;max-width:760px}
-  .flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-  .flow div{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--mid);box-shadow:var(--sh-sm)}
+  body{background:var(--paper);color:var(--ink);line-height:1.5;padding:0 20px 64px}
+
+  /* Nav */
+  .topnav{max-width:1180px;margin:0 auto;display:flex;gap:8px;justify-content:center;padding:18px 0 4px}
+  .topnav a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:14px;font-weight:700;
+    color:var(--mid);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 18px;transition:.15s}
+  .topnav a:hover{color:var(--ink);border-color:var(--brand)}
+  .topnav a.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+  .wrap{max-width:1180px;margin:0 auto}
+  header{margin:26px 0 22px}
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--brand-lt);color:var(--brand-dk);
+    font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:14px}
+  h1{font-size:clamp(27px,4vw,42px);letter-spacing:-.02em;line-height:1.04;font-weight:800}
+  h1 span{color:var(--brand)}
+  .sub{color:var(--mid);font-size:15px;margin-top:10px;max-width:780px}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .flow div{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13px;font-weight:600;color:var(--mid);box-shadow:var(--sh-sm)}
   .flow div b{color:var(--ink)}
-  .research{background:linear-gradient(135deg,#0ea8c0,#18c8e0);color:#fff;border-radius:var(--r);padding:20px 22px;margin:22px 0;box-shadow:var(--sh)}
-  .research h2{font-size:14px;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-bottom:12px}
-  .research ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-  .research li{font-size:14px;line-height:1.45;padding-left:22px;position:relative}
-  .research li::before{content:"→";position:absolute;left:0;font-weight:800;opacity:.8}
-  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
-  .legend span{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mid)}
-  .dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  /* Research band — calm dark, not a bright gradient */
+  .research{background:var(--band);color:#f2ede4;border-radius:var(--r);padding:22px 24px;margin:24px 0;box-shadow:var(--sh)}
+  .research h2{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:#d8b48f;margin-bottom:14px;font-weight:800}
+  .research ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px 26px}
+  .research li{font-size:13.5px;line-height:1.5;padding-left:20px;position:relative;color:#e6ddcf}
+  .research li b{color:#fff}
+  .research li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--brand)}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:2px 2px 18px}
+  .legend span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--mid)}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+
   .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-  .colhead{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center;padding:4px 0}
-  .cell{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:12px 12px 13px;box-shadow:var(--sh-sm);min-height:172px;display:flex;flex-direction:column;position:relative;overflow:hidden}
-  .cell::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
-  .cell.spot::before{background:var(--spot)} .cell.edu::before{background:var(--edu)}
-  .cell.trust::before{background:var(--trust)} .cell.phil::before{background:var(--phil)}
-  .cell.local::before{background:var(--local)} .cell.fun::before{background:var(--fun)}
-  .cell.cta::before{background:var(--cta)}
-  .date{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
-  .date b{font-size:15px}
-  .tag{font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border-radius:6px;color:#fff}
+  .colhead{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:center;padding:2px 0 4px}
+  .cell{background:var(--card);border:1px solid var(--line-2);border-radius:14px;padding:13px 13px 14px;box-shadow:var(--sh-sm);min-height:176px;display:flex;flex-direction:column;position:relative;overflow:hidden;border-left:3px solid var(--line)}
+  .cell.spot{border-left-color:var(--spot)} .cell.edu{border-left-color:var(--edu)}
+  .cell.trust{border-left-color:var(--trust)} .cell.phil{border-left-color:var(--phil)}
+  .cell.local{border-left-color:var(--local)} .cell.fun{border-left-color:var(--fun)}
+  .cell.cta{border-left-color:var(--cta)}
+  .date{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .date b{font-size:14.5px;letter-spacing:-.01em}
+  .tag{font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;color:#fff}
   .spot .tag{background:var(--spot)} .edu .tag{background:var(--edu)} .trust .tag{background:var(--trust)}
   .phil .tag{background:var(--phil)} .local .tag{background:var(--local)} .fun .tag{background:var(--fun)} .cta .tag{background:var(--cta)}
-  .hook{font-size:13px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:6px}
-  .film{font-size:11.5px;color:var(--mid);line-height:1.35;flex:1}
-  .fname{font-size:10.5px;font-family:ui-monospace,Menlo,monospace;color:var(--teal-dk);background:var(--teal-lt);padding:3px 6px;border-radius:5px;margin-top:8px;align-self:flex-start;word-break:break-all}
-  .banner{grid-column:1/-1;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:12px;padding:10px 14px;font-size:13px;color:#9a3412;font-weight:600}
-  .empty{background:transparent;border:1px dashed var(--line);box-shadow:none;min-height:172px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
-  footer{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh-sm)}
-  .card h3{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--teal-dk);margin-bottom:11px}
-  .card p,.card li{font-size:13.5px;color:var(--mid);line-height:1.55}
-  .card ul{list-style:none;display:flex;flex-direction:column;gap:6px}
-  .card li b{color:var(--ink)}
-  code{font-family:ui-monospace,Menlo,monospace;background:var(--teal-lt);color:var(--teal-dk);padding:2px 6px;border-radius:5px;font-size:12.5px}
+  .hook{font-size:13px;font-weight:700;color:var(--ink);line-height:1.32;margin-bottom:6px}
+  .film{font-size:11.5px;color:var(--mid);line-height:1.4;flex:1}
+  .fname{font-size:10.5px;font-family:ui-monospace,Menlo,monospace;color:var(--brand-dk);background:var(--brand-lt);padding:3px 7px;border-radius:5px;margin-top:9px;align-self:flex-start;word-break:break-all}
+  .empty{background:transparent;border:1px dashed var(--line);box-shadow:none;min-height:176px;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:12px;padding:10px}
+
+  footer{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .card-box{background:var(--card);border:1px solid var(--line-2);border-radius:var(--r);padding:20px 22px;box-shadow:var(--sh-sm)}
+  .card-box h3{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-dk);margin-bottom:12px}
+  .card-box p,.card-box li{font-size:13.5px;color:var(--mid);line-height:1.55}
+  .card-box ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .card-box li b{color:var(--ink)}
+  code{font-family:ui-monospace,Menlo,monospace;background:var(--brand-lt);color:var(--brand-dk);padding:2px 6px;border-radius:5px;font-size:12.5px}
   @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.colhead{display:none}.cell,.empty{min-height:auto}}
-  .topnav{display:flex;gap:8px;justify-content:center;margin:0 0 22px;flex-wrap:wrap}
-  .topnav a{text-decoration:none;font-size:14px;font-weight:700;color:var(--mid);background:var(--white);border:1px solid var(--line);padding:8px 18px;border-radius:999px}
-  .topnav a.active{background:var(--teal-dk);color:#fff;border-color:var(--teal-dk)}
 </style>
 </head>
 <body>
+<nav class="topnav">
+  <a href="index.html" class="active">Calendar</a>
+  <a href="scripts.html">Filming Scripts</a>
+</nav>
 <div class="wrap">
-<div class="topnav"><a href="index.html" class="active">📅 Calendar</a> <a href="scripts.html">🎬 Scripts</a></div>
-
   <header>
-    <div class="eyebrow">🐾 Content Engine · Deep-Researched</div>
+    <div class="eyebrow">Content Engine · Deep-Researched</div>
     <h1>August 2026 <span>Content Calendar</span></h1>
     <p class="sub">A living plan for Sugar Sweet Georgia Puppies. Post one clip every weekday at noon ET. Each day tells Phil exactly what to film — the caption, title, and posting are handled automatically from the filename.</p>
     <div class="flow">
       <div><b>Monthly</b> plan (this)</div>
-      <div>↻ refines <b>Weekly</b> to what's in the store</div>
-      <div>↻ refines <b>Daily</b> to today's shot</div>
+      <div>refines <b>Weekly</b> to what's in the store</div>
+      <div>refines <b>Daily</b> to today's shot</div>
     </div>
   </header>
 
   <div class="research">
-    <h2>What the research says (and how this calendar uses it)</h2>
+    <h2>What the research says — and how this calendar uses it</h2>
     <ul>
       <li><b>Hook in ~1.5 seconds.</b> Every day's hook is written to land instantly — no slow intros.</li>
       <li><b>10–18 sec clips retain best.</b> Keep them short; one idea per clip.</li>
-      <li><b>Trust content converts.</b> Anti-puppy-mill + vet-care days are placed every week — it's the #1 buyer objection.</li>
-      <li><b>Local + breed keywords = discovery.</b> Hooks name breeds and Lawrenceville/Gwinnett/Atlanta on purpose.</li>
+      <li><b>Trust content converts.</b> Anti-puppy-mill and vet-care days appear every week — it's the #1 buyer objection.</li>
+      <li><b>Local + breed keywords drive discovery.</b> Hooks name breeds and Lawrenceville, Gwinnett, and Atlanta on purpose.</li>
       <li><b>National Dog Day (Aug 26)</b> is the month's anchor — a big multi-breed celebration post.</li>
-      <li><b>Back-to-school</b> (Gwinnett starts early Aug) + <b>Relaxation Day (Aug 15)</b> give timely, shareable angles.</li>
+      <li><b>Back-to-school</b> (Gwinnett starts early Aug) and <b>Relaxation Day (Aug 15)</b> give timely, shareable angles.</li>
     </ul>
   </div>
 
   <div class="legend">
     <span><i class="dot" style="background:var(--spot)"></i>Puppy Spotlight</span>
     <span><i class="dot" style="background:var(--edu)"></i>Educate (breeds/allergies)</span>
-    <span><i class="dot" style="background:var(--trust)"></i>Trust & Care</span>
+    <span><i class="dot" style="background:var(--trust)"></i>Trust &amp; Care</span>
     <span><i class="dot" style="background:var(--phil)"></i>Ask Phil</span>
     <span><i class="dot" style="background:var(--local)"></i>Local</span>
     <span><i class="dot" style="background:var(--fun)"></i>Funny / Shareable</span>
@@ -130,7 +143,7 @@
     <!-- Week 4 -->
     <div class="cell local"><div class="date"><b>Aug 24</b><span class="tag">Local</span></div><div class="hook">"Serving families across Metro Atlanta — here's why they drive to us."</div><div class="film">Storefront + happy pups + Phil.</div><div class="fname">[breed]-metro-atlanta</div></div>
     <div class="cell edu"><div class="date"><b>Aug 25</b><span class="tag">Educate</span></div><div class="hook">"These are some of our most popular low-shedding breeds."</div><div class="film">Roundup of 2–3 hypoallergenic breeds.</div><div class="fname">low-shedding-roundup</div></div>
-    <div class="cell spot banner-day"><div class="date"><b>Aug 26</b><span class="tag">⭐ Dog Day</span></div><div class="hook">"Happy National Dog Day from the whole crew!"</div><div class="film">Multi-breed celebration — as many pups as you can, upbeat + CTA.</div><div class="fname">national-dog-day-crew</div></div>
+    <div class="cell spot"><div class="date"><b>Aug 26</b><span class="tag">Dog Day</span></div><div class="hook">"Happy National Dog Day from the whole crew!"</div><div class="film">Multi-breed celebration — as many pups as you can, upbeat + CTA.</div><div class="fname">national-dog-day-crew</div></div>
     <div class="cell trust"><div class="date"><b>Aug 27</b><span class="tag">Trust</span></div><div class="hook">"Why we only work with trusted local breeders — no exceptions."</div><div class="film">Phil to camera.</div><div class="fname">trusted-breeders</div></div>
     <div class="cell fun"><div class="date"><b>Aug 28</b><span class="tag">Funny</span></div><div class="hook">(Two puppies wrestling / a chaotic-cute moment.)</div><div class="film">Multiple pups playing, natural sound.</div><div class="fname">funny-playtime</div></div>
 
@@ -143,7 +156,7 @@
   </div>
 
   <footer>
-    <div class="card">
+    <div class="card-box">
       <h3>How to film each day</h3>
       <ul>
         <li>Film <b>vertical</b>, 10–30 sec, clean spot with the store behind Phil.</li>
@@ -152,7 +165,7 @@
         <li>Turn <b>HDR video OFF</b> in the iPhone camera (Settings → Camera → Record Video) so color stays true.</li>
       </ul>
     </div>
-    <div class="card">
+    <div class="card-box">
       <h3>Rotate these CTAs</h3>
       <ul>
         <li>"Come meet our puppies in Lawrenceville."</li>
@@ -162,7 +175,7 @@
         <li>"Send this to someone looking for a small hypoallergenic puppy."</li>
       </ul>
     </div>
-    <div class="card">
+    <div class="card-box">
       <h3>Filename = accuracy</h3>
       <p>Name each clip with the <b>breed</b> (that's the <code>[breed]</code> in each cell). The caption, hashtags, and YouTube title all generate from it — so a poodle never becomes a Maltipoo. No breed in the name still posts a clean, general caption.</p>
     </div>
